@@ -188,7 +188,7 @@ CREATE TABLE if NOT EXISTS `course_comments`(
   `owner` BIGINT(20) NOT NULL,
   `publishTime` BIGINT(20) NOT NULL,
   `lastReplyTime` BIGINT(20) NOT NULL,
-  `courseId` varchar(255) NOT NULL,
+  `courseId` varchar(50) NOT NULL,
   `replyCount` INT DEFAULT 0,
   `deleted` INT NOT NULL DEFAULT 0,
   `score1` TINYINT DEFAULT 0,
