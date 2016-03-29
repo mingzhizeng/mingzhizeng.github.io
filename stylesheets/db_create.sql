@@ -18,9 +18,9 @@ ENGINE=INNODB
 DEFAULT CHARACTER SET=utf8mb4
 ;
 
--- set SESSION sql_mode='NO_AUTO_VALUE_ON_ZERO';
--- INSERT into users (innerUserId, userId) values(0, '');
--- INSERT into users (innerUserId, userId) values(9223372036854775807, 'root');
+set SESSION sql_mode='NO_AUTO_VALUE_ON_ZERO';
+INSERT into users (innerUserId, userId) values(0, '');
+INSERT into users (innerUserId, userId) values(9223372036854775807, 'root');
 
 CREATE TABLE IF NOT EXISTS `circles`(
   `id` BIGINT(20) NOT NULL PRIMARY KEY AUTO_INCREMENT,
@@ -374,6 +374,7 @@ CREATE TABLE IF NOT EXISTS  `categories` (
   `level` INT DEFAULT 0,
   `parentId` INT DEFAULT 0,
   `position` INT DEFAULT 0,
+  `enable` tinyint(1) DEFAULT 0,
   UNIQUE INDEX (`id`, `name`),
   UNIQUE INDEX (`level`, `name`)
 

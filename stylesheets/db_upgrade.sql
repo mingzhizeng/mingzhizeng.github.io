@@ -62,6 +62,14 @@ IF NOT EXISTS
 THEN 
 	ALTER TABLE categories ADD position INT DEFAULT 0;
 END IF;
+
+IF NOT EXISTS 
+	(SELECT * FROM information_schema.columns 
+		WHERE table_schema='spark' AND table_name ='categories' AND column_name ='enable') 
+THEN 
+	ALTER TABLE categories ADD enable TINYINT(1) DEFAULT 0;
+END IF;
+
 END;
 //  
 DELIMITER ;
