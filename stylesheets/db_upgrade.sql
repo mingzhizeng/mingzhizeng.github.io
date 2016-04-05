@@ -100,3 +100,47 @@ END;
 //  
 DELIMITER ;
 CALL upgrade_tags();
+
+
+DROP PROCEDURE IF EXISTS upgrade_circles;
+DELIMITER // 
+CREATE PROCEDURE upgrade_circles() 
+BEGIN   
+DECLARE spark VARCHAR(100);
+SELECT DATABASE() INTO spark;
+IF EXISTS 
+	(SELECT * FROM information_schema.columns 
+		WHERE table_schema='spark' AND table_name ='circles' AND column_name ='categories') 
+THEN 
+	ALTER TABLE circles DROP COLUMN categories;
+END IF;
+
+IF EXISTS 
+	(SELECT * FROM information_schema.columns 
+		WHERE table_schema='spark' AND table_name ='circles' AND column_name ='tags') 
+THEN 
+	ALTER TABLE circles DROP COLUMN tags;
+END IF;
+
+END;
+//  
+DELIMITER ;
+CALL upgrade_circles();
+
+
+DROP PROCEDURE IF EXISTS upgrade_activity;
+DELIMITER // 
+CREATE PROCEDURE upgrade_activity() 
+BEGIN   
+DECLARE spark VARCHAR(100);
+SELECT DATABASE() INTO spark;
+IF NOT EXISTS 
+	(SELECT * FROM information_schema.columns 
+		WHERE table_schema='spark' AND table_name ='activity' AND column_name ='ts_create') 
+THEN 
+	ALTER TABLE activity ADD ts_create BIGINT(20) DEFAULT 0;
+END IF;
+END;
+//  
+DELIMITER ;
+CALL upgrade_activity();

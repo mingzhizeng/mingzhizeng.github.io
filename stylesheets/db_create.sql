@@ -30,9 +30,7 @@ CREATE TABLE IF NOT EXISTS `circles`(
   `memberCount` INT NOT NULL DEFAULT 0,
   `masterId` BIGINT(20) ,
   `topicCount` INT NOT NULL ,
-  `courseId` varchar(50) CHARACTER SET latin1,
-  `categories` TEXT ,
-  `tags` TEXT ,
+  `courseId` varchar(50) CHARACTER SET latin1,  
   `online` BOOL NOT NULL DEFAULT TRUE,
   `deleted` BOOL NOT NULL DEFAULT FALSE,
   `ts_create` BIGINT(20),
@@ -188,7 +186,7 @@ CREATE TABLE if NOT EXISTS `course_comments`(
   `owner` BIGINT(20) NOT NULL,
   `publishTime` BIGINT(20) NOT NULL,
   `lastReplyTime` BIGINT(20) NOT NULL,
-  `courseId` varchar(50) NOT NULL,
+  `courseId` varchar(255) NOT NULL,
   `replyCount` INT DEFAULT 0,
   `deleted` INT NOT NULL DEFAULT 0,
   `score1` TINYINT DEFAULT 0,
@@ -504,6 +502,7 @@ CREATE TABLE if NOT EXISTS `activity`(
   `b_company` BOOL DEFAULT FALSE,
   `b_position` BOOL DEFAULT FALSE,
   `b_remark` BOOL DEFAULT FALSE,
+  `ts_create` BIGINT(20),
   UNIQUE KEY(`id`)
 )
 ENGINE=INNODB
