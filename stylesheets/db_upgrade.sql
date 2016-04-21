@@ -10,6 +10,21 @@ IF NOT EXISTS
 THEN 
 	ALTER TABLE users ADD ts_register BIGINT(20) NOT NULL DEFAULT 0;
 END IF;
+
+IF NOT EXISTS 
+	(SELECT * FROM information_schema.columns 
+		WHERE table_schema='spark' AND table_name ='users' AND column_name ='blocked') 
+THEN 
+	ALTER TABLE users ADD blocked tinyint(1) DEFAULT 0;
+END IF;
+
+IF NOT EXISTS 
+	(SELECT * FROM information_schema.columns 
+		WHERE table_schema='spark' AND table_name ='users' AND column_name ='ts_block') 
+THEN 
+	ALTER TABLE users ADD ts_block bigint(20) DEFAULT 0;
+END IF;
+
 END;
 //  
 DELIMITER ;

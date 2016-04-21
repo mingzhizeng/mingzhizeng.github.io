@@ -12,6 +12,8 @@ CREATE TABLE IF NOT EXISTS `users`(
   `userInfoJson` TEXT,
   `tokenId` varchar(255),
   `ts_register` BIGINT(20) NOT NULL DEFAULT 0,
+  `blocked` TINYINT(1) DEFAULT 0,
+  `ts_block` BIGINT(20) DEFAULT 0,
   UNIQUE INDEX(`userId`)
 )
 ENGINE=INNODB
