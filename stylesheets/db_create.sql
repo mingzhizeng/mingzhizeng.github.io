@@ -301,6 +301,7 @@ CREATE TABLE if not EXISTS  `user_in_circle` (
 CREATE TABLE  if not EXISTS `user_like_topic` (
   `userId` BIGINT(20) NOT NULL ,
   `topicId` BIGINT(20) NOT NULL ,
+  `publishTime` bigint(20) NOT NULL,
   PRIMARY KEY (`userId`,`topicId`),
   INDEX(`topicId`)
 )

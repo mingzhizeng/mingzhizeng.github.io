@@ -159,3 +159,21 @@ END;
 //  
 DELIMITER ;
 CALL upgrade_activity();
+
+
+DROP PROCEDURE IF EXISTS upgrade_user_like_topic;
+DELIMITER // 
+CREATE PROCEDURE upgrade_user_like_topic() 
+BEGIN   
+DECLARE spark VARCHAR(100);
+SELECT DATABASE() INTO spark;
+IF NOT EXISTS 
+	(SELECT * FROM information_schema.columns 
+		WHERE table_schema='spark' AND table_name ='user_like_topic' AND column_name ='publishTime') 
+THEN 
+	ALTER TABLE user_like_topic ADD publishTime BIGINT(20) DEFAULT 0;
+END IF;
+END;
+//  
+DELIMITER ;
+CALL upgrade_user_like_topic();
