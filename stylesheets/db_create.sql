@@ -401,6 +401,7 @@ CREATE TABLE IF NOT EXISTS  `circle_categories` (
   `id` INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
   `circleId` BIGINT(20) NOT NULL,
   `categoryId` BIGINT(20) NOT NULL,
+  `isTop` tinyint(1) DEFAULT 0,
   INDEX (`circleId`)
 
 ) ENGINE=InnoDB
