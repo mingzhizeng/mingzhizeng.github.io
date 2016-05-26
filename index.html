@@ -14,51 +14,51 @@
   
   <body>
     <script type="text/javascript">
-    //     function onBridgeReady(){
-    //       MiguxueJSBridge.log("onBridgeReady");
-    //       // MiguxueJSBridge.call('hideOptionMenu', {}, function(a){
-    //       //     MiguxueJSBridge.log("##########"+a);
-    //       //   });
-            
-    //       MiguxueJSBridge.call('wxshare', {title: 'test', desc: 'test desc', link: 'http://wwww.baidu.com', imgUrl: 'http://img2.sj.qq.com/res/sj.qq.com/official2/images/api/api1.png'});
-    //     }
-    
-    // if (typeof MiguxueJSBridge == "undefined"){
-    //     if( document.addEventListener ){
-    //         document.addEventListener('MiguxueJSBridgeReady', onBridgeReady, false);
-    //     }else if (document.attachEvent){
-    //         document.attachEvent('MiguxueJSBridgeReady', onBridgeReady);
-    //         document.attachEvent('onMiguxueJSBridgeReady', onBridgeReady);
-    //     }
-    // }else{
-    //     onBridgeReady();
-    // }
-
-      function onBridgeReady(){
-          WeixinJSBridge.log("onBridgeReady");
-          WeixinJSBridge.call('hideOptionMenu', {}, function(a){
-              WeixinJSBridge.log("##########"+a);
+        function onBridgeReady(){
+          MiguxueJSBridge.log("onBridgeReady");
+          MiguxueJSBridge.call('hideOptionMenu', {}, function(a){
+              MiguxueJSBridge.log("##########"+a);
             });
             
-    //          setTimeout(function(){
-    //   WeixinJSBridge.call('sendAppMessage', {title: 'test', desc: 'test desc', link: 'http://wwww.baidu.com', imgUrl: 'http://img2.sj.qq.com/res/sj.qq.com/official2/images/api/api1.png'}, function(a){
-    //         alert("##########"+a);
-    //            //WeixinJSBridge.log("##########"+a);
-    //          });
-    // },5000);
-          
+          // MiguxueJSBridge.call('wxshare', {title: 'test', desc: 'test desc', link: 'http://wwww.baidu.com', imgUrl: 'http://img2.sj.qq.com/res/sj.qq.com/official2/images/api/api1.png'});
         }
     
-    if (typeof WeixinJSBridge == "undefined"){
+    if (typeof MiguxueJSBridge == "undefined"){
         if( document.addEventListener ){
-            document.addEventListener('WeixinJSBridgeReady', onBridgeReady, false);
+            document.addEventListener('MiguxueJSBridgeReady', onBridgeReady, false);
         }else if (document.attachEvent){
-            document.attachEvent('WeixinJSBridgeReady', onBridgeReady);
-            document.attachEvent('onWeixinJSBridgeReady', onBridgeReady);
+            document.attachEvent('MiguxueJSBridgeReady', onBridgeReady);
+            document.attachEvent('onMiguxueJSBridgeReady', onBridgeReady);
         }
     }else{
         onBridgeReady();
     }
+
+    //   function onBridgeReady(){
+    //       WeixinJSBridge.log("onBridgeReady");
+    //       WeixinJSBridge.call('hideOptionMenu', {}, function(a){
+    //           WeixinJSBridge.log("##########"+a);
+    //         });
+            
+    // //          setTimeout(function(){
+    // //   WeixinJSBridge.call('sendAppMessage', {title: 'test', desc: 'test desc', link: 'http://wwww.baidu.com', imgUrl: 'http://img2.sj.qq.com/res/sj.qq.com/official2/images/api/api1.png'}, function(a){
+    // //         alert("##########"+a);
+    // //            //WeixinJSBridge.log("##########"+a);
+    // //          });
+    // // },5000);
+          
+    //     }
+    
+    // if (typeof WeixinJSBridge == "undefined"){
+    //     if( document.addEventListener ){
+    //         document.addEventListener('WeixinJSBridgeReady', onBridgeReady, false);
+    //     }else if (document.attachEvent){
+    //         document.attachEvent('WeixinJSBridgeReady', onBridgeReady);
+    //         document.attachEvent('onWeixinJSBridgeReady', onBridgeReady);
+    //     }
+    // }else{
+    //     onBridgeReady();
+    // }
 
 
 
@@ -76,13 +76,13 @@
           <h2 id="project_tagline">mingzhizeng&#39;s Blog</h2>
 
         </header>
-        <header class="inner">
+<!--         <header class="inner">
           <a id="forkme_banner" href="tel2://10086">View on GitHub</a>
 
           <h1 id="project_title">曾明智博客2</h1>
           <h2 id="project_tagline">mingzhizeng&#39;s Blog</h2>
 
-        </header>
+        </header> -->
     </div>
 
     <!-- MAIN CONTENT -->
