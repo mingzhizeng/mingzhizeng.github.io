@@ -211,3 +211,23 @@ END;
 //
 DELIMITER ;
 CALL upgrade_comments_blocked();
+
+DROP PROCEDURE IF EXISTS upgrade_replies_blocked;
+DELIMITER //
+CREATE PROCEDURE upgrade_replies_blocked()
+BEGIN
+DECLARE spark VARCHAR(100);
+SELECT DATABASE() INTO spark;
+IF NOT EXISTS
+	(SELECT * FROM information_schema.columns
+		WHERE table_schema='spark' AND table_name ='replies' AND column_name ='blocked')
+THEN
+	ALTER TABLE replies ADD blocked BOOL DEFAULT FALSE;
+END IF;
+END;
+//
+DELIMITER ;
+CALL upgrade_replies_blocked();
+
+
+
