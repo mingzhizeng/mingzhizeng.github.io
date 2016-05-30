@@ -194,3 +194,20 @@ END;
 //  
 DELIMITER ;
 CALL upgrade_circle_categories();
+
+DROP PROCEDURE IF EXISTS upgrade_comments_blocked;
+DELIMITER //
+CREATE PROCEDURE upgrade_comments_blocked()
+BEGIN
+DECLARE spark VARCHAR(100);
+SELECT DATABASE() INTO spark;
+IF NOT EXISTS
+	(SELECT * FROM information_schema.columns
+		WHERE table_schema='spark' AND table_name ='comments' AND column_name ='blocked')
+THEN
+	ALTER TABLE circle_categories ADD blocked BOOL DEFAULT FALSE;
+END IF;
+END;
+//
+DELIMITER ;
+CALL upgrade_comments_blocked();
