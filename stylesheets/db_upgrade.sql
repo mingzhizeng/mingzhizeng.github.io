@@ -205,7 +205,7 @@ IF NOT EXISTS
 	(SELECT * FROM information_schema.columns
 		WHERE table_schema='spark' AND table_name ='comments' AND column_name ='blocked')
 THEN
-	ALTER TABLE circle_categories ADD blocked BOOL DEFAULT FALSE;
+	ALTER TABLE comments ADD blocked BOOL DEFAULT FALSE;
 END IF;
 END;
 //
