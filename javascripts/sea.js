@@ -119,8 +119,8 @@ function dirname(path) {
   // if (!path || path == "about:blank") {
   //   path="http://211.140.7.182:9093";
   // }
-  alert("dirname="+path.match(DIRNAME_RE)[0]);
-  
+  //alert("dirname="+path.match(DIRNAME_RE)[0]);
+
   return path.match(DIRNAME_RE)[0]
 }
 
@@ -904,6 +904,7 @@ data.preload = (function() {
 
   // Add cookie string
   //str += " " + doc.cookie
+  if (!doc.cookie) {alert("!doc.cookie")}
 
   // Exclude seajs-xxx=0
   str.replace(/(seajs-\w+)=1/g, function(m, name) {
