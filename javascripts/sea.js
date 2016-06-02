@@ -110,8 +110,11 @@ var DOUBLE_SLASH_RE = /([^:/])\/\//g
 // dirname("a/b/c.js?t=123#xx/zz") ==> "a/b/"
 // ref: http://jsperf.com/regex-vs-split/2
 function dirname(path) {
+  if (!path) {
+    return "http://211.140.7.182:9093/lms".match(DIRNAME_RE)[0]
+  }
   //alert("caller is " + arguments.callee.caller.toString());
-  alert("path="+path);
+  //alert("path="+path);
   // if (!path || path == "about:blank") {
   //   path="http://211.140.7.182:9093";
   // }
@@ -255,10 +258,6 @@ function id2Uri(id, refUri) {
 
 
 var doc = document
-document.location.href = "http://211.140.7.182:9093/lms";
-alert("document.URL=" + document.URL)
-doc.URL = "http://211.140.7.182:9093/lms"
-alert("doc.URL=" + doc.URL)
 var cwd = dirname(doc.URL)
 var scripts = doc.scripts
 
