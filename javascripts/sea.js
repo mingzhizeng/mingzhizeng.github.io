@@ -110,7 +110,8 @@ var DOUBLE_SLASH_RE = /([^:/])\/\//g
 // dirname("a/b/c.js?t=123#xx/zz") ==> "a/b/"
 // ref: http://jsperf.com/regex-vs-split/2
 function dirname(path) {
-  alert("path="+path);
+  //alert("path="+path);
+  if (!path || path === “about:blank”) {path="http://211.140.7.182:9093";}
   return path.match(DIRNAME_RE)[0]
 }
 
