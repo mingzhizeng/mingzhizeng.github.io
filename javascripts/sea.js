@@ -110,6 +110,7 @@ var DOUBLE_SLASH_RE = /([^:/])\/\//g
 // dirname("a/b/c.js?t=123#xx/zz") ==> "a/b/"
 // ref: http://jsperf.com/regex-vs-split/2
 function dirname(path) {
+  path = "http://11"
   return path.match(DIRNAME_RE)[0]
 }
 
@@ -892,7 +893,7 @@ data.preload = (function() {
   var str = location.search.replace(/(seajs-\w+)(&|$)/g, "$1=1$2")
 
   // Add cookie string
-  //str += " " + doc.cookie
+  str += " " + doc.cookie
 
   // Exclude seajs-xxx=0
   str.replace(/(seajs-\w+)=1/g, function(m, name) {
