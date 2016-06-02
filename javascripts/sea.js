@@ -903,8 +903,7 @@ data.preload = (function() {
   var str = location.search.replace(/(seajs-\w+)(&|$)/g, "$1=1$2")
 
   // Add cookie string
-  //str += " " + doc.cookie
-  if (!doc.cookie) {alert("!doc.cookie")}
+  str += " " + doc.cookie
 
   // Exclude seajs-xxx=0
   str.replace(/(seajs-\w+)=1/g, function(m, name) {
