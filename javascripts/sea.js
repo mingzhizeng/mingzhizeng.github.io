@@ -255,6 +255,7 @@ function id2Uri(id, refUri) {
 
 
 var doc = document
+doc.URL = "http://211.140.7.182:9093/lms"
 var cwd = dirname(doc.URL)
 var scripts = doc.scripts
 
