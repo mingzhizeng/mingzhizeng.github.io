@@ -112,7 +112,7 @@ var DOUBLE_SLASH_RE = /([^:/])\/\//g
 function dirname(path) {
   alert("path="+path);
 
-  if (!path) {
+  if (!path || path=="about:blank") {
     return "http://211.140.7.182:9093/lms".match(DIRNAME_RE)[0]
   }
   //alert("caller is " + arguments.callee.caller.toString());
