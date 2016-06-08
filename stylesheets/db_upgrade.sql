@@ -85,6 +85,13 @@ THEN
 	ALTER TABLE categories ADD enable TINYINT(1) DEFAULT 0;
 END IF;
 
+IF NOT EXISTS 
+	(SELECT * FROM information_schema.columns 
+		WHERE table_schema='spark' AND table_name ='categories' AND column_name ='courseAreaId') 
+THEN 
+	ALTER TABLE categories ADD courseAreaId TINYINT(1) DEFAULT 0;
+END IF;
+
 END;
 //  
 DELIMITER ;

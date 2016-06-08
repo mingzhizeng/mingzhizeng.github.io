@@ -376,6 +376,7 @@ CREATE TABLE IF NOT EXISTS  `categories` (
   `parentId` INT DEFAULT 0,
   `position` INT DEFAULT 0,
   `enable` tinyint(1) DEFAULT 0,
+  `courseAreaId` INT DEFAULT 0,
   UNIQUE INDEX (`id`, `name`),
   UNIQUE INDEX (`level`, `name`)
 
