@@ -16,7 +16,8 @@
     <script type="text/javascript">
         function onBridgeReady(){
           MiguxueJSBridge.log("onBridgeReady");
-          MiguxueJSBridge.call('hideOptionMenu', {}, function(a){
+          MiguxueJSBridge.call('getDsn', {}, function(a){
+            alert("DSN=" + a);
               MiguxueJSBridge.log("##########"+a);
             });
             
