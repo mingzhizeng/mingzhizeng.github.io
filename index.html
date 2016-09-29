@@ -14,52 +14,55 @@
   
   <body>
     <script type="text/javascript">
-        function onBridgeReady(){
-          MiguxueJSBridge.log("onBridgeReady");
-          MiguxueJSBridge.call('getDsn', {}, function(a){
-            alert("DSN=" + a);
-              MiguxueJSBridge.log("##########"+a);
-            });
-            
-          // MiguxueJSBridge.call('wxshare', {title: 'test', desc: 'test desc', link: 'http://wwww.baidu.com', imgUrl: 'http://img2.sj.qq.com/res/sj.qq.com/official2/images/api/api1.png'});
-        }
-    
-    if (typeof MiguxueJSBridge == "undefined"){
-        if( document.addEventListener ){
-            document.addEventListener('MiguxueJSBridgeReady', onBridgeReady, false);
-        }else if (document.attachEvent){
-            document.attachEvent('MiguxueJSBridgeReady', onBridgeReady);
-            document.attachEvent('onMiguxueJSBridgeReady', onBridgeReady);
-        }
-    }else{
-        onBridgeReady();
-    }
-
-    //   function onBridgeReady(){
-    //       WeixinJSBridge.log("onBridgeReady");
-    //       WeixinJSBridge.call('hideOptionMenu', {}, function(a){
-    //           WeixinJSBridge.log("##########"+a);
+    //     function onBridgeReady(){
+    //       MiguxueJSBridge.log("onBridgeReady");
+    //       MiguxueJSBridge.call('getDsn', {}, function(a){
+    //         alert("DSN=" + a);
+    //           MiguxueJSBridge.log("##########"+a);
     //         });
             
-    // //          setTimeout(function(){
-    // //   WeixinJSBridge.call('sendAppMessage', {title: 'test', desc: 'test desc', link: 'http://wwww.baidu.com', imgUrl: 'http://img2.sj.qq.com/res/sj.qq.com/official2/images/api/api1.png'}, function(a){
-    // //         alert("##########"+a);
-    // //            //WeixinJSBridge.log("##########"+a);
-    // //          });
-    // // },5000);
-          
+    //       // MiguxueJSBridge.call('wxshare', {title: 'test', desc: 'test desc', link: 'http://wwww.baidu.com', imgUrl: 'http://img2.sj.qq.com/res/sj.qq.com/official2/images/api/api1.png'});
     //     }
     
-    // if (typeof WeixinJSBridge == "undefined"){
+    // if (typeof MiguxueJSBridge == "undefined"){
     //     if( document.addEventListener ){
-    //         document.addEventListener('WeixinJSBridgeReady', onBridgeReady, false);
+    //         document.addEventListener('MiguxueJSBridgeReady', onBridgeReady, false);
     //     }else if (document.attachEvent){
-    //         document.attachEvent('WeixinJSBridgeReady', onBridgeReady);
-    //         document.attachEvent('onWeixinJSBridgeReady', onBridgeReady);
+    //         document.attachEvent('MiguxueJSBridgeReady', onBridgeReady);
+    //         document.attachEvent('onMiguxueJSBridgeReady', onBridgeReady);
     //     }
     // }else{
     //     onBridgeReady();
     // }
+
+      function onBridgeReady(){
+          WeixinJSBridge.log("onBridgeReady");
+          // WeixinJSBridge.call('hideOptionMenu', {}, function(a){
+          //     WeixinJSBridge.log("##########"+a);
+          //   });
+             WeixinJSBridge.call('sendAppMessage', {title: 'test', desc: 'test desc', link: 'http://wwww.baidu.com', imgUrl: 'http://img2.sj.qq.com/res/sj.qq.com/official2/images/api/api1.png'}, function(a){
+            alert("##########"+a);
+               //WeixinJSBridge.log("##########"+a);
+             });
+    //          setTimeout(function(){
+    //   WeixinJSBridge.call('sendAppMessage', {title: 'test', desc: 'test desc', link: 'http://wwww.baidu.com', imgUrl: 'http://img2.sj.qq.com/res/sj.qq.com/official2/images/api/api1.png'}, function(a){
+    //         alert("##########"+a);
+    //            //WeixinJSBridge.log("##########"+a);
+    //          });
+    // },5000);
+          
+        }
+    
+    if (typeof WeixinJSBridge == "undefined"){
+        if( document.addEventListener ){
+            document.addEventListener('WeixinJSBridgeReady', onBridgeReady, false);
+        }else if (document.attachEvent){
+            document.attachEvent('WeixinJSBridgeReady', onBridgeReady);
+            document.attachEvent('onWeixinJSBridgeReady', onBridgeReady);
+        }
+    }else{
+        onBridgeReady();
+    }
 
 
 
